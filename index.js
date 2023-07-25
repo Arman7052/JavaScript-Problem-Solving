@@ -12,6 +12,21 @@ console.log(reversed);
 
 // Example Input: [2, -5, 10, -3, 7] Example Output: 19
 
+function positiveNumSum(numbers){
+  let sum = 0;
+  for(let i=0 ; i<numbers.length; i++){
+    if(numbers[i]>0){
+      sum +=numbers[i];
+    }
+  }
+  return sum;
+}
+
+const numbers = [2, -5, 10, -3, 7] ;
+const total = positiveNumSum(numbers)
+console.log(total);
+
+
 
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
 
