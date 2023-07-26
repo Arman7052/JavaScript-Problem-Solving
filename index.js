@@ -2,9 +2,9 @@
 
 const reverseStr = (inputStr) => [...inputStr].reduceRight((reversed, character) => reversed + character, '');
 
-const originalStr = "Task-1 Solved";
+const originalStr = "Task Solved";
 const reversed = reverseStr(originalStr);
-console.log(reversed);
+console.log(`Task-1: "${originalStr}" reversed version :` ,reversed);
 
 
 
@@ -23,7 +23,7 @@ function positiveNumSum(numbers) {
 
 const numbers = [2, -5, 10, -3, 7];
 const total = positiveNumSum(numbers)
-console.log(total);
+console.log('Task-2: Sum of all positive numbers : ',total);
 
 
 
@@ -55,7 +55,7 @@ function findMostFrequentElement(arr) {
 
 const elements = [3, 5, 4, 4, 4, 5, 2, 5, 3, 3, 1, 4, 4, 5];
 const result = findMostFrequentElement(elements);
-console.log(result);
+console.log('Task-3: Most frequent element : ',result);
 
 
 
@@ -85,7 +85,7 @@ const targetValue = 11;
 const input = [1, 2, 3, 4, 6, 8, 11, 15];
 
 const indices = twoNumbersWithSum(input, targetValue);
-console.log(indices);
+console.log('Task-4: Indices of the two numbers : ', indices);
 
 
 
@@ -93,9 +93,9 @@ console.log(indices);
 
 
 
-const n1 = parseFloat(process.argv[2]);
-const operator = process.argv[3];
-const n2 = parseFloat(process.argv[4]);
+const n1 = 10;
+const operator = "+";
+const n2 = 5;
 
 function calculator(n1, operator, n2){
   if(operator === '+'){
@@ -114,24 +114,33 @@ function calculator(n1, operator, n2){
   }
 }
 
-const calculatingResult = calculator(n1, operator, n2);
-console.log(`Result: ${calculatingResult}`);
-/*
-To get calculating result giving independent value or operator in terminal use 
-Example:
-1. node index.js 10 + 5(Add) 
-2. node index.js 10 - 5(minus)
-3. node index.js 10 * 5(multi)
-4. node index.js 10 / 5(divide)
-*/
+const calculation = calculator(n1, operator, n2);
+console.log('Task-5: Calculated Result :', calculation);
 
 
 
 
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+function generateRandomPassword(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&';
+
+  let password = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters[randomIndex];
+  }
+
+  return password;
+}
+
+const passwordLength = 10; 
+const randomPassword = generateRandomPassword(passwordLength);
+console.log('Task-6: Generated Password : ', randomPassword);
 
 
 // Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
+
 
 
 // Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
