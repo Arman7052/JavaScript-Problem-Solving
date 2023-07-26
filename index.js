@@ -142,7 +142,7 @@ console.log('Task-6: Generated Password : ', randomPassword);
 // Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 
 function romanToInt(roman) {
-  const romanNumerals = {
+  const romanNumeral = {
     'I': 1,
     'V': 5,
     'X': 10,
@@ -154,10 +154,10 @@ function romanToInt(roman) {
 
   let result = 0;
   let prevValue = 0;
-
+ 
   for (let i = roman.length - 1; i >= 0; i--) {
     const currentNumeral = roman[i];
-    const currentValue = romanNumerals[currentNumeral];
+    const currentValue = romanNumeral[currentNumeral];
 
     if (currentValue < prevValue) {
       result -= currentValue;
@@ -175,3 +175,20 @@ console.log('Task-7: Result in Integer : ', resultInInt);
 
 
 // Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+
+function findSecondSmallest(arr) {
+  if (arr.length < 2) {
+    return undefined;
+  }
+
+  const smallest = Math.min(...arr);
+  const restNum = arr.filter(num => num !== smallest);
+  const secondSmallestNum = restNum.reduce((prev, curr) => Math.min(prev, curr));
+
+  return secondSmallestNum;
+}
+
+const numbersGiven = [4, 20, 7, 10, 5, 3];
+const resultOf2ndSmallest = findSecondSmallest(numbersGiven)
+console.log('Task-8 : Second smallest element :', resultOf2ndSmallest,);
+
