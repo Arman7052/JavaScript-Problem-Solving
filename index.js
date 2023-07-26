@@ -92,6 +92,42 @@ console.log(indices);
 // Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
 
 
+
+const n1 = parseFloat(process.argv[2]);
+const operator = process.argv[3];
+const n2 = parseFloat(process.argv[4]);
+
+function calculator(n1, operator, n2){
+  if(operator === '+'){
+    return n1+n2;
+  } else if(operator === '-'){
+    return n1-n2;
+  } else if(operator === '*'){
+    return n1*n2;
+  } else if(operator === '/'){
+    if (n2 === 0) {
+      return "Invalid";
+    }
+    return n1/n2 ;
+  } else {
+    return "Please input valid number or operator"
+  }
+}
+
+const calculatingResult = calculator(n1, operator, n2);
+console.log(`Result: ${calculatingResult}`);
+/*
+To get calculating result giving independent value or operator in terminal use 
+Example:
+1. node index.js 10 + 5(Add) 
+2. node index.js 10 - 5(minus)
+3. node index.js 10 * 5(multi)
+4. node index.js 10 / 5(divide)
+*/
+
+
+
+
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
 
