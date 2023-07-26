@@ -4,7 +4,7 @@ const reverseStr = (inputStr) => [...inputStr].reduceRight((reversed, character)
 
 const originalStr = "Task Solved";
 const reversed = reverseStr(originalStr);
-console.log(`Task-1: "${originalStr}" reversed version :` ,reversed);
+console.log(`Task-1: "${originalStr}" reversed version :`, reversed);
 
 
 
@@ -23,7 +23,7 @@ function positiveNumSum(numbers) {
 
 const numbers = [2, -5, 10, -3, 7];
 const total = positiveNumSum(numbers)
-console.log('Task-2: Sum of all positive numbers : ',total);
+console.log('Task-2: Sum of all positive numbers : ', total);
 
 
 
@@ -55,7 +55,7 @@ function findMostFrequentElement(arr) {
 
 const elements = [3, 5, 4, 4, 4, 5, 2, 5, 3, 3, 1, 4, 4, 5];
 const result = findMostFrequentElement(elements);
-console.log('Task-3: Most frequent element : ',result);
+console.log('Task-3: Most frequent element : ', result);
 
 
 
@@ -78,7 +78,7 @@ function twoNumbersWithSum(arr, target) {
     }
   }
 
-  return []; 
+  return [];
 }
 const targetValue = 11;
 
@@ -97,18 +97,18 @@ const n1 = 10;
 const operator = "+";
 const n2 = 5;
 
-function calculator(n1, operator, n2){
-  if(operator === '+'){
-    return n1+n2;
-  } else if(operator === '-'){
-    return n1-n2;
-  } else if(operator === '*'){
-    return n1*n2;
-  } else if(operator === '/'){
+function calculator(n1, operator, n2) {
+  if (operator === '+') {
+    return n1 + n2;
+  } else if (operator === '-') {
+    return n1 - n2;
+  } else if (operator === '*') {
+    return n1 * n2;
+  } else if (operator === '/') {
     if (n2 === 0) {
       return "Invalid";
     }
-    return n1/n2 ;
+    return n1 / n2;
   } else {
     return "Please input valid number or operator"
   }
@@ -134,13 +134,44 @@ function generateRandomPassword(length) {
   return password;
 }
 
-const passwordLength = 10; 
+const passwordLength = 10;
 const randomPassword = generateRandomPassword(passwordLength);
 console.log('Task-6: Generated Password : ', randomPassword);
 
 
 // Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 
+function romanToInt(roman) {
+  const romanNumerals = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  };
+
+  let result = 0;
+  let prevValue = 0;
+
+  for (let i = roman.length - 1; i >= 0; i--) {
+    const currentNumeral = roman[i];
+    const currentValue = romanNumerals[currentNumeral];
+
+    if (currentValue < prevValue) {
+      result -= currentValue;
+    } else {
+      result += currentValue;
+    }
+
+    prevValue = currentValue;
+  }
+
+  return result;
+}
+const resultInInt = romanToInt("III");
+console.log('Task-7: Result in Integer : ', resultInInt);
 
 
 // Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
